@@ -18,3 +18,90 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="panel" type="PanelContainer" parent="root" unique_id=79335417]
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+
+[node name="margin" type="MarginContainer" parent="root/panel" unique_id=374482292]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="box" type="VBoxContainer" parent="root/panel/margin" unique_id=1524756920]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Seed" type="Button" parent="root/panel/margin/box" unique_id=559420996]
+layout_mode = 2
+text = "Random seed
+"
+
+[node name="Octave" type="Label" parent="root/panel/margin/box" unique_id=565524604]
+layout_mode = 2
+text = "Octave"
+
+[node name="octave" type="HSlider" parent="root/panel/margin/box" unique_id=186098131]
+layout_mode = 2
+min_value = 1.0
+max_value = 8.0
+value = 4.0
+
+[node name="Frequency" type="Label" parent="root/panel/margin/box" unique_id=330480183]
+layout_mode = 2
+text = "Frequency"
+
+[node name="frequency" type="HSlider" parent="root/panel/margin/box" unique_id=1596538775]
+layout_mode = 2
+min_value = 0.01
+max_value = 0.5
+step = 0.01
+value = 0.08
+
+[node name="Gain" type="Label" parent="root/panel/margin/box" unique_id=770408232]
+layout_mode = 2
+text = "Gain"
+
+[node name="gain" type="HSlider" parent="root/panel/margin/box" unique_id=191868874]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="Lacunarity" type="Label" parent="root/panel/margin/box" unique_id=1511295858]
+layout_mode = 2
+text = "Lacunarity"
+
+[node name="lacunarity" type="HSlider" parent="root/panel/margin/box" unique_id=834509056]
+layout_mode = 2
+min_value = 1.0
+max_value = 4.0
+step = 0.05
+value = 2.0
+
+[node name="visible_text" type="CheckButton" parent="root/panel/margin/box" unique_id=1873027426]
+layout_mode = 2
+text = "Visible values"
+
+[node name="Grid Size" type="Label" parent="root/panel/margin/box" unique_id=512017286]
+layout_mode = 2
+text = "Grid size"
+
+[node name="gridsize" type="HSlider" parent="root/panel/margin/box" unique_id=2112452311]
+layout_mode = 2
+min_value = 16.0
+max_value = 180.0
+value = 100.0
+
+[node name="Regenerate" type="Button" parent="root/panel/margin/box" unique_id=1905830874]
+layout_mode = 2
+text = "Regenerate"
+
+[node name="view" type="Control" parent="root" unique_id=529810506]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="value_changed" from="root/panel/margin/box/gridsize" to="." method="_on_gridsize_value_changed"]
+[connection signal="pressed" from="root/panel/margin/box/Regenerate" to="." method="_on_regenerate_pressed"]
